@@ -32,6 +32,13 @@ fn test_calculate_padding_count() {
 	assert calculate_padding_count(32) == 1
 }
 
+fn test_produce_padding() {
+	assert  produce_padding(1) == '='
+	assert  produce_padding(4) == '===='
+	assert  produce_padding(6) == '======'
+	assert  produce_padding(8) == '========'
+}
+
 fn test_base32_encode_function() {
 	encode_base32('hello world')
 	assert true
