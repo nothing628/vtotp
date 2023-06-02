@@ -13,12 +13,12 @@ const time_step = 30
 const time_start = 0
 
 fn get_current_unix_seconds() i64 {
-	return time.now().unix
+	return time.utc().unix
 }
 
 fn get_current_time_step() u64 {
 	// T = (Current Unix time - T0) / X
-	current_time := get_current_unix_seconds() - 3600 * 7
+	current_time := get_current_unix_seconds()
 	t := math.floor((current_time - time_start) / time_step)
 
 	return u64(t)
