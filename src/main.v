@@ -3,6 +3,7 @@ module main
 import time
 import math
 import encx
+import base_encoding
 
 // TimeStep (X) represent the time step in seconds
 // TimeStart (T0) is the Unix time sto start counting time steps
@@ -33,4 +34,6 @@ fn main() {
 
 	encx.myprint()
 	mgeaprint()
+
+	base_encoding.encode_base32('hihihi')
 }
