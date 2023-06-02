@@ -34,16 +34,6 @@ fn index_start(a u64) u64 {
 	return floor_div(a, 8)
 }
 
-fn get_masking(c u8) u8 {
-	mut result := 0
-
-	for i in 0 .. c {
-		result |= 1 << i
-	}
-
-	return u8(result)
-}
-
 fn safe_get_array_element(inp []u8, idx u64) u8 {
 	if idx < inp.len {
 		return inp[idx]
@@ -52,14 +42,14 @@ fn safe_get_array_element(inp []u8, idx u64) u8 {
 }
 
 fn get_bit(from u64, inp []u8) u8 {
-	to := from + 5	//5
-	from_index := index_start(from) //0
+	to := from + 5 // 5
+	from_index := index_start(from) // 0
 	is_need_next := (from_index + 1) * 8 < to // 8 < 5
 
 	elem0 := safe_get_array_element(inp, from_index)
 
 	if !is_need_next {
-		shift_count := (from_index + 1)*8 - to	//
+		shift_count := (from_index + 1) * 8 - to //
 		out := elem0 >> shift_count
 
 		return out & 0b00011111
@@ -109,4 +99,10 @@ pub fn encode_base32(inp string) string {
 
 	str_builder.write_string(padding)
 	return str_builder.str()
+}
+
+pub fn decode_base32(inp string) []u8 {
+	result := []u8{}
+
+	return result
 }
