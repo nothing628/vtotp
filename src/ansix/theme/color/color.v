@@ -1,5 +1,7 @@
 module color
 
+import ansix
+
 pub struct AnsiColor {
 pub:
 	value i16    [required]
@@ -20,22 +22,36 @@ pub fn from_rgb(rgb RGB) AnsiColor {
 }
 
 fn (c AnsiColor) get_foreground() string {
-	// TODO: Implement this later
-	return ''
+	value := c.value
+	if value < 0 {
+		return ''
+	}
+
+	return '${ansix.foreground_color_start_code}${value}${ansix.color_end_code}'
 }
 
 fn (c AnsiColor) get_background() string {
-	// TODO: Implement this later
-	return ''
+	value := c.value
+	if value < 0 {
+		return ''
+	}
+
+	return '${ansix.background_color_start_code}${value}${ansix.color_end_code}'
 }
 
 fn (c AnsiColor) get_foreground_rgb() string {
-	// TODO: Implement this later
+	if rgb := c.rgb {
+		return '${ansix.foreground_rgb_color_start_code}${rgb.to_ansi_string()}${ansix.color_end_code}'
+	}
+
 	return ''
 }
 
 fn (c AnsiColor) get_background_rgb() string {
-	// TODO: Implement this later
+	if rgb := c.rgb {
+		return '${ansix.background_rgb_color_start_code}${rgb.to_ansi_string()}${ansix.color_end_code}'
+	}
+
 	return ''
 }
 
