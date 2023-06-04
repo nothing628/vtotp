@@ -8,7 +8,7 @@ enum AnsiBorderType {
 	inside_horizontal
 	inside_vertical
 	footer
-	transparent
+	@none
 	outside
 	outside_horizontal
 	outside_vertical
