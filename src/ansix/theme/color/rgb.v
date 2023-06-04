@@ -39,11 +39,11 @@ fn (c RGB) to_hex() string {
 }
 
 fn (c RGB) to_string() string {
-	red := c.red
-	green := c.green
-	blue := c.blue
+	r := c.red
+	g := c.green
+	b := c.blue
 
-	return '(${red}, ${green}, ${blue})'
+	return '(${r}, ${g}, ${b})'
 }
 
 fn (c RGB) to_ansi_string() string {

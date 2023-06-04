@@ -72,19 +72,3 @@ fn (c AnsiColor) to_string() string {
 	hex := c.hex
 	return '${name} (${hex})'
 }
-
-const transparent = AnsiColor{
-	value: -1
-	name: 'none'
-	hex: ''
-	rgb: none
-	hsl: none
-}
-
-const black = AnsiColor{
-	value: 0
-	name: 'Black'
-	hex: '#000000'
-	rgb: RGB{0, 0, 0}
-	hsl: HLS{0, 0, 0}
-}
