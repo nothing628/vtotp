@@ -19,34 +19,42 @@ pub fn from_rgb(rgb RGB) AnsiColor {
 	}
 }
 
-pub fn (c AnsiColor) get_foreground() string {
+fn (c AnsiColor) get_foreground() string {
 	// TODO: Implement this later
 	return ''
 }
 
-pub fn (c AnsiColor) get_background() string {
+fn (c AnsiColor) get_background() string {
 	// TODO: Implement this later
 	return ''
 }
 
-pub fn (c AnsiColor) get_foreground_rgb() string {
+fn (c AnsiColor) get_foreground_rgb() string {
 	// TODO: Implement this later
 	return ''
 }
 
-pub fn (c AnsiColor) get_background_rgb() string {
+fn (c AnsiColor) get_background_rgb() string {
 	// TODO: Implement this later
 	return ''
 }
 
-pub fn (c AnsiColor) get_lightness() string {
-	// TODO: Implement this later
-	return ''
+fn (c AnsiColor) get_lightness() ?u32 {
+	if hsl := c.hsl {
+		return hsl.lightness
+	}
+
+	if rgb := c.rgb {
+		return rgb.get_relative_luminance()
+	}
+
+	return none
 }
 
-pub fn (c AnsiColor) to_string() ?string {
-	// TODO: Implement this later
-	return ''
+fn (c AnsiColor) to_string() string {
+	name := c.name
+	hex := c.hex
+	return '${name} (${hex})'
 }
 
 const transparent = AnsiColor{
