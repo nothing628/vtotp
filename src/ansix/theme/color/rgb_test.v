@@ -44,3 +44,14 @@ fn test_to_string() {
 	result := color.to_string()
 	assert result == '(5, 255, 127)'
 }
+
+fn test_value() {
+	color := RGB{
+		red: 255
+		green: 0
+		blue: 0
+	}
+
+	result := color.value()
+	assert result == 196
+}

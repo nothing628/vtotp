@@ -22,6 +22,10 @@ fn (c RGB) get_relative_luminance() u32 {
 	return u32(math.floor(r + g + b / 255 * 100))
 }
 
+fn (c RGB) value() u8 {
+	return rgb_to_8bit_color(c.red, c.green, c.blue)
+}
+
 fn (c RGB) to_hex() string {
 	r := c.red.hex_full().to_upper()
 	g := c.green.hex_full().to_upper()
