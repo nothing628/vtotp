@@ -2,6 +2,7 @@ module main
 
 import time
 import math
+import ansix
 import encoding.base32
 import crypto.hmac
 import crypto.sha1
@@ -65,4 +66,9 @@ fn main() {
 	// println('secret : ${key.len} ${key}')
 	println('data   : ${data.len} ${data}')
 	println('otp    : ${otp}')
+
+	print(ansix.bold_start_code)
+	print('test')
+	print(ansix.bold_end_code)
+	// print(ansix.clean_all)
 }
