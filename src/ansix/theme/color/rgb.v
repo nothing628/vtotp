@@ -2,16 +2,20 @@ module color
 
 import math
 
+/// **RGB**
+///
+/// RGB stands for Red, Green, and Blue.
+///
+/// It is a color model used in digital imaging and
+/// computer graphics to create colors by mixing different intensities of these three primary colors.
+///
+/// In the RGB model, each color is represented by a combination of red, green, and blue values
+/// ranging from 0 to 255, where 0 represents the absence of that color and 255 represents its maximum intensity.
 pub struct RGB {
 pub:
 	red   u8 [required]
 	green u8 [required]
 	blue  u8 [required]
-}
-
-struct Point {
-	x int
-	y int
 }
 
 fn (c RGB) get_relative_luminance() u32 {
