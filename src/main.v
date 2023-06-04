@@ -58,14 +58,14 @@ fn get_totp(key []u8, data []u8) u32 {
 }
 
 fn main() {
-	secret := '64IDVBKOW34FTEQZ5IYTB4AEKCHZF7OK'
-	data := convert_u64_to_u8(get_current_time_step())
-	key := base32.decode(secret.bytes())!
-	otp := get_totp(key, data)
+	// secret := ''
+	// data := convert_u64_to_u8(get_current_time_step())
+	// key := base32.decode(secret.bytes())!
+	// otp := get_totp(key, data)
 
 	// println('secret : ${key.len} ${key}')
-	println('data   : ${data.len} ${data}')
-	println('otp    : ${otp}')
+	// println('data   : ${data.len} ${data}')
+	// println('otp    : ${otp}')
 
 	print(ansix.bold_start_code)
 	print('test')
